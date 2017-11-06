@@ -1,6 +1,6 @@
 package com.amigo.user.repository;
 
-import com.pachimari.user.User;
+import com.amigo.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

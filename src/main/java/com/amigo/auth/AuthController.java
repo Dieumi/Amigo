@@ -1,7 +1,7 @@
 package com.amigo.auth;
 
-import com.pachimari.exception.InvalideException;
-import com.pachimari.product.InvalidException;
+import com.amigo.exception.InvalideException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

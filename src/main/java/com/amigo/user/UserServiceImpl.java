@@ -1,6 +1,6 @@
 package com.amigo.user;
 
-import com.pachimari.user.repository.UserRepository;
+import com.amigo.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
