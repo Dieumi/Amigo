@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.CREATED;
  * Created by andrem on 23/03/2017.
  */
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/commentaire")
 public class CommentaireController {
     @Autowired
     private CommentaireServiceImpl commentaireService;

@@ -26,6 +26,7 @@ public class VoyageEntity {
 
     private String typeVoiture;
     private double price;
+    private double note;
 
     @Override
     public String toString() {

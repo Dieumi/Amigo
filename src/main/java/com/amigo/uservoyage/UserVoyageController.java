@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.CREATED;
  * Created by andrem on 23/03/2017.
  */
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/uservoyage")
 public class UserVoyageController {
     @Autowired
     private UserVoyageServiceImpl userVoyageService;

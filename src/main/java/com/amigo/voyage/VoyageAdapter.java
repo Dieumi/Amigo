@@ -17,6 +17,7 @@ public class VoyageAdapter {
                 .nbplace(voyage.getNbplace())
                 .price(voyage.getPrice())
                 .typeVoiture(voyage.getTypeVoiture())
+                .note(voyage.getNote())
                 .build();
     }
 
@@ -29,6 +30,7 @@ public class VoyageAdapter {
                 .price(voyageDto.getPrice())
                 .nbplace(voyageDto.getNbplace())
                 .typeVoiture(voyageDto.getTypeVoiture())
+                .note(voyageDto.getNote())
                 .build();
     }
 

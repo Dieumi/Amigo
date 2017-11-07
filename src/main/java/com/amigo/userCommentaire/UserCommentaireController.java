@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.CREATED;
  * Created by andrem on 23/03/2017.
  */
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/UserCommentaire")
 public class UserCommentaireController {
     @Autowired
     private UserCommentaireServiceImpl usercommentaireService;
@@ -36,7 +36,7 @@ public class UserCommentaireController {
     }
 
     @GetMapping
-    public List<UserCommentaireDto> getAllProducts() {
+    public List<UserCommentaireDto> getAllUserCommentaire() {
         try {
             return usercommentaireService.getAllUserCommentaire();
         }

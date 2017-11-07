@@ -29,6 +29,8 @@ public class VoyageDto {
     private String typeVoiture;
     @NotNull
     private double price;
+    @NotNull
+    private double note;
     public VoyageDto(String idUser, int nbplace, String depart, String arrive, String typeVoiture){
        /* this.name = name;
         this.brand = brand;
