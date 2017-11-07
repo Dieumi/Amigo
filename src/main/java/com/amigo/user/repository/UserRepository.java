@@ -17,4 +17,5 @@ public interface UserRepository  extends MongoRepository<User,String>{
     public User findByLogin(String login);
     public List<User> findByType(String Type);
 
+
 }
