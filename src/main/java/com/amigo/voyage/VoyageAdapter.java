@@ -32,11 +32,11 @@ public class VoyageAdapter {
                 .build();
     }
 
-    public static List<VoyageDto> fromProductListToDtoList(List<VoyageEntity> productEntities){
-        List<VoyageDto> productDtoList = new ArrayList<VoyageDto>();
-        for(VoyageEntity productEntity : productEntities){
-            productDtoList.add(fromVoyagetToDto(productEntity));
+    public static List<VoyageDto> fromProductListToDtoList(List<VoyageEntity> voyageEntities){
+        List<VoyageDto> userVoyageDtoList = new ArrayList<VoyageDto>();
+        for(VoyageEntity voyageEntitie : voyageEntities){
+            userVoyageDtoList.add(fromVoyagetToDto(voyageEntitie));
         }
-        return  productDtoList;
+        return  userVoyageDtoList;
     }
 }
