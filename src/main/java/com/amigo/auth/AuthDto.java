@@ -22,8 +22,8 @@ public class AuthDto {
     @NotNull
     private String pwd;
 
-    public AuthDto(String login, String pwd){
+    /*public AuthDto(String login, String pwd){
         this.login=login;
-    }
+    }*/
 
 }
