@@ -1,6 +1,7 @@
 package com.amigo.uservoyage;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
+@Document(collection="userVoyage")
 public class UserVoyageEntity {
     @Id
     private String id;

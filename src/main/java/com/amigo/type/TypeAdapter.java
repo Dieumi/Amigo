@@ -11,18 +11,16 @@ import com.amigo.voyage.VoyageEntity;
 public class TypeAdapter {
 
     public static TypeDTO fromTypeToDto(Type typeDTO){
-        return Type.builder()
+        return TypeDTO.builder()
                 .id(typeDTO.getId())
-                .nbSuitcase(typeDTO.getNbSuitcase())
-                .smoking(typeDTO.getSmoking())
+                .value(typeDTO.getValue())
                 .build();
     }
     
     public static Type fromDtoToType(TypeDTO type){
-        return TypeDTO.builder()
+        return Type.builder()
                 .id(type.getId())
-                .nbSuitcase(type.getNbSuitcase())
-                .smoking(type.getSmoking())
+                .value(type.getValue())
                 .build();
     }
     

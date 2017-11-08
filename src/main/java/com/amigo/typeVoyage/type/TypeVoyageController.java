@@ -1,38 +1,28 @@
-package com.amigo.type;
+package com.amigo.typeVoyage.type;
 
-import static org.springframework.http.HttpStatus.CREATED;
-
-import java.net.URI;
-import java.util.List;
-
-import javax.validation.Valid;
-
+import com.amigo.voyage.InvalidException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.amigo.voyage.InvalidException;
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
+
+import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
-@RequestMapping("/type")
-public class TypeController {
+@RequestMapping("/typeVoyage")
+public class TypeVoyageController {
 
 	@Autowired
-    private TypeServiceImpl typeService;
+    private TypeVoyageServiceImpl typeService;
 
     @GetMapping("/find/{name}/{brand}/{type}")
-    public List<TypeDTO> getProductByOptionalParameters(@PathVariable("name") String name, @PathVariable("brand") String brand, @PathVariable("type") String type) {
+    public List<TypeVoyageDTO> getProductByOptionalParameters(@PathVariable("name") String name, @PathVariable("brand") String brand, @PathVariable("type") String type) {
         try {
             name = (name.equals("any")) ? null : name;
             brand = (brand.equals("any")) ? null : brand;
@@ -45,9 +35,8 @@ public class TypeController {
     }
 
     @GetMapping
-    public List<TypeDTO> getAllProducts() {
+    public List<TypeVoyageDTO> getAllProducts() {
         try {
-            System.out.println("test");
             return typeService.getListType();
         }
         catch(Exception e){
@@ -57,8 +46,7 @@ public class TypeController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public ResponseEntity createProduct(@RequestBody @Valid TypeDTO typeDto, BindingResult bindingResult){
-
+    public ResponseEntity createProduct(@RequestBody @Valid TypeVoyageDTO typeDto, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             throw new InvalidException();
         }
@@ -72,7 +60,7 @@ public class TypeController {
         }
     }
     @GetMapping("/{type_id}")
-    public TypeDTO getProductById(@PathVariable("type_id") String id){
+    public TypeVoyageDTO getProductById(@PathVariable("type_id") String id){
         try {
             return typeService.getTypeById(id);
         }
@@ -94,7 +82,7 @@ public class TypeController {
     }
 
     @PutMapping()
-    public ResponseEntity updateProduct(@RequestBody @Valid TypeDTO typeDto, BindingResult bindingResult){
+    public ResponseEntity updateProduct(@RequestBody @Valid TypeVoyageDTO typeDto, BindingResult bindingResult){
         try {
             if (bindingResult.hasErrors()) {
                 throw new InvalidException();

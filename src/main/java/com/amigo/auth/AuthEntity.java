@@ -1,6 +1,7 @@
 package com.amigo.auth;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
@@ -13,8 +14,8 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
+@Document(collection="auth")
 public class AuthEntity {
-
     @Id
     private String id;
 

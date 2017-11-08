@@ -1,6 +1,7 @@
 package com.amigo.voyage;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
+@Document(collection="voyage")
 public class VoyageEntity {
     @Id
     private String id;
@@ -27,7 +29,7 @@ public class VoyageEntity {
     private String typeVoiture;
     private double price;
     private double note;
-
+    private String date;
     @Override
     public String toString() {
       /*  return String.format(

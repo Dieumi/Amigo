@@ -1,4 +1,4 @@
-package com.amigo.userCommentaire;
+package com.amigo.ville;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,15 +13,14 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
-@Document(collection="usercommentaire")
-public class UserCommentaireEntity {
+@Document(collection="ville")
+public class VilleEntity {
     @Id
     private String id;
 
-    private String idUser;
+    private String name;
 
-
-    private String idReceiver;
+    private String region;
 
 
 

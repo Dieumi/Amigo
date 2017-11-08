@@ -35,7 +35,7 @@ public class AuthController {
             throw new InvalideException();
         }
         try{
-            AuthDto authDto = authService.getAuthByLogin(login);
+            AuthDto authDto = authService.getAuthByLogin(login.trim());
             return authDto;
         }catch(Exception e) {
             return null;

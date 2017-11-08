@@ -18,12 +18,7 @@ import lombok.Setter;
 public class TypeDTO {
 
 	private String id;
-	
 	@NotNull
     @NotBlank
-    private String nbSuitcase;
-	
-	@NotNull
-    @NotBlank
-    private String smoking;
+    private String value;
 }

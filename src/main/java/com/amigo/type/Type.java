@@ -1,6 +1,7 @@
 package com.amigo.type;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,12 +21,12 @@ import lombok.Setter;
 
 public class Type {
 
-	
+	@Id
 	private String id;
 	
-	private String nbSuitcase;
+	private String value;
 	
-	private String smoking;
+
 	
 	
 }

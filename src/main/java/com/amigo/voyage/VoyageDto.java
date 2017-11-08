@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * Created by andrem on 23/03/2017.
@@ -29,6 +30,8 @@ public class VoyageDto {
     private String typeVoiture;
     @NotNull
     private double price;
+    @NotNull
+    private String date;
     @NotNull
     private double note;
     public VoyageDto(String idUser, int nbplace, String depart, String arrive, String typeVoiture){

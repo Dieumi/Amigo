@@ -1,6 +1,7 @@
 package com.amigo.Commentaire;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
+@Document(collection="commentaire")
 public class CommentaireEntity {
     @Id
     private String id;
