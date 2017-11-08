@@ -3,6 +3,8 @@ package com.amigo.auth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Loïc on 08/04/2017.
  */
@@ -34,6 +36,11 @@ public class AuthServiceImpl implements  AuthService{
     @Override
     public AuthDto getAuthByLogin(String login) {
         return AuthAdapter.toAuthDto(authRepository.findByLogin(login));
+    }
+
+    @Override
+    public List<AuthDto> getList() {
+        return AuthAdapter.fromAuthListToDtoList(authRepository.findAll());
     }
 
 

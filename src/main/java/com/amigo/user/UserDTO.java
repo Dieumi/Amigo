@@ -38,14 +38,5 @@ public class UserDTO {
 
     @NotNull
     @NotBlank
-    private String addresse;
-    @NotNull
-    @NotBlank
-    private String ville;
-    @NotNull
-    @NotBlank
-    private String cp;
-    @NotNull
-    @NotBlank
     private String type;
 }

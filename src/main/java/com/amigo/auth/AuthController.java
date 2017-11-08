@@ -2,6 +2,7 @@ package com.amigo.auth;
 
 import com.amigo.exception.InvalideException;
 
+import com.amigo.user.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +12,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 /**
  * Created by iPlowPlow on 10/03/2017.
@@ -26,6 +29,7 @@ public class AuthController {
     private AuthServiceImpl authService;
 
     @PostMapping
+    @ResponseStatus(OK)
     public AuthDto authentification(@RequestBody String login, BindingResult bindingResult ){
         if(bindingResult.hasErrors()){
             throw new InvalideException();
@@ -36,6 +40,12 @@ public class AuthController {
         }catch(Exception e) {
             return null;
         }
+    }
+    @GetMapping()
+    public List<AuthDto> getAccountList()
+    {
+
+        return authService.getList();
     }
 
     @PostMapping("/add")

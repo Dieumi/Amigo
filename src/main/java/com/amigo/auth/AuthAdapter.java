@@ -1,5 +1,12 @@
 package com.amigo.auth;
 
+
+
+import org.apache.http.auth.AUTH;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by iPlowplow on 10/03/2017.
  */
@@ -21,4 +28,11 @@ public class AuthAdapter {
                 .pwd(authEntity.getPwd())
                 .build();
    }
+    public static List<AuthDto> fromAuthListToDtoList(List<AuthEntity> AuthEntities){
+        List<AuthDto> CommentaireDtoList = new ArrayList<AuthDto>();
+        for(AuthEntity authEntitie : AuthEntities){
+            CommentaireDtoList.add(toAuthDto(authEntitie));
+        }
+        return  CommentaireDtoList;
+    }
 }
