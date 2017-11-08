@@ -30,6 +30,7 @@ public class VoyageEntity {
     private double price;
     private double note;
     private String date;
+    private String heureDep;
     @Override
     public String toString() {
       /*  return String.format(

@@ -14,14 +14,15 @@ public class MongoConfig extends  AbstractMongoConfiguration {
 
     @Override
     public String getDatabaseName() {
-        return "amigo";
+        return "heroku_07nblqtz";
     }
 
     @Override
     @Bean
     public Mongo mongo() throws Exception {
         MongoClientURI uri  = new MongoClientURI("mongodb://heroku_07nblqtz:ff08k99pomnicnmv69dtga0otb@ds249605.mlab.com:49605/heroku_07nblqtz");
-        return new MongoClient(uri);
+        MongoClient client= new MongoClient(uri);
+        return client;
     }
 
 }

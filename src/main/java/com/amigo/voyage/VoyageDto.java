@@ -34,6 +34,8 @@ public class VoyageDto {
     private String date;
     @NotNull
     private double note;
+    @NotNull
+    private String heureDep;
     public VoyageDto(String idUser, int nbplace, String depart, String arrive, String typeVoiture){
        /* this.name = name;
         this.brand = brand;

@@ -19,6 +19,7 @@ public class VoyageAdapter {
                 .typeVoiture(voyage.getTypeVoiture())
                 .note(voyage.getNote())
                 .date(voyage.getDate())
+                .heureDep(voyage.getHeureDep())
                 .build();
     }
 
@@ -33,6 +34,7 @@ public class VoyageAdapter {
                 .typeVoiture(voyageDto.getTypeVoiture())
                 .note(voyageDto.getNote())
                 .date(voyageDto.getDate())
+                .heureDep(voyageDto.getHeureDep())
                 .build();
     }
 
