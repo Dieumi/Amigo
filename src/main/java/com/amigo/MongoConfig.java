@@ -19,7 +19,7 @@ public class MongoConfig extends  AbstractMongoConfiguration {
     @Override
     @Bean
     public Mongo mongo() throws Exception {
-        return new MongoClient("mongodb://heroku_07nblqtz:ff08k99pomnicnmv69dtga0otb@ds249605.mlab.com:49605/heroku_07nblqtz");
+        return new MongoClient("mongodb://heroku_07nblqtz:ff08k99pomnicnmv69dtga0otb@ds249605.mlab.com:49605/");
     }
 
 }
