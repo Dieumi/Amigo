@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @EnableAutoConfiguration
 public class PachimariApplication {
 
-	@RequestMapping("/test")
+	@RequestMapping("/")
 	@ResponseBody
 	String home() {
 		return "Hello World!";

@@ -13,7 +13,7 @@ public interface AuthService {
     public AuthDto getAuthByLogin(String login);
     public List<AuthDto> getList();
 
-    
+
 }
 
 
