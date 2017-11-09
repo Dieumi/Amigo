@@ -1,4 +1,4 @@
-package com.amigo.typeVoyage.type;
+package com.amigo.typeVoyage;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

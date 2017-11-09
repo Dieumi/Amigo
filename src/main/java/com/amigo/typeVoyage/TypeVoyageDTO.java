@@ -1,4 +1,4 @@
-package com.amigo.typeVoyage.type;
+package com.amigo.typeVoyage;
 
 import lombok.*;
 import org.hibernate.validator.constraints.NotBlank;

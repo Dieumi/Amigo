@@ -1,4 +1,4 @@
-package com.amigo.typeVoyage.type;
+package com.amigo.typeVoyage;
 
 import com.amigo.voyage.InvalidException;
 import org.springframework.beans.factory.annotation.Autowired;
