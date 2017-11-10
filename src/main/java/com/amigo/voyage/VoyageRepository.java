@@ -16,4 +16,7 @@ public interface VoyageRepository extends MongoRepository<VoyageEntity, String> 
     public List<VoyageEntity> findByOptionalParameters(String name, String brand, String typeId);
     public List<VoyageEntity> findAll();
     public VoyageEntity findById(String id);
+    public List<VoyageEntity> findByArriveAndDepartAndDateGreaterThanEqualAndNbplaceGreaterThan(String arr, String dep,String date,int nb);
+    public List<VoyageEntity> findByArriveAndDepartAndDateGreaterThanEqualAndHeureDepGreaterThanEqualAndNbplaceGreaterThan(String arr, String dep,String date,String heure,int nb);
+
 }

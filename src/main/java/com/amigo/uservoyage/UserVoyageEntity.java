@@ -18,7 +18,6 @@ public class UserVoyageEntity {
     @Id
     private String id;
     private String idVoyage;
-
     private String idUser;
 
 

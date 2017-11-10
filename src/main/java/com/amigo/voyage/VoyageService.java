@@ -1,5 +1,7 @@
 package com.amigo.voyage;
 
+import com.amigo.typeVoyage.TypeVoyageDTO;
+
 import java.util.List;
 
 /**
@@ -15,4 +17,5 @@ public interface VoyageService {
     public VoyageDto updateVoyage(VoyageDto productDto);
 
     public VoyageDto getVoyageById(String id);
+    public List<VoyageDto> getListVoyage(String arrive,String depart,String heure,String date);
 }

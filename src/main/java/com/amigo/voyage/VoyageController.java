@@ -12,6 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 /**
  * Created by andrem on 23/03/2017.
@@ -60,6 +61,20 @@ public class VoyageController {
             return new ResponseEntity(HttpStatus.NOT_MODIFIED);
         }
     }
+    @PostMapping("/getList")
+    @ResponseStatus(OK)
+    public ResponseEntity getListVoyage(@RequestBody @Valid Search search, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            throw new InvalidException();
+        }
+        try {
+
+            return new ResponseEntity(voyageService.getListVoyage(search.getArrive(),search.getDepart(),search.getHeureDep(),search.getDate()),HttpStatus.OK);
+        }
+        catch(Exception e){
+            return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        }
+    }
     @GetMapping("/{voyage_id}")
     public VoyageDto getProductById(@PathVariable("voyage_id") String id){
         try {
@@ -88,6 +103,20 @@ public class VoyageController {
             if (bindingResult.hasErrors()) {
                 throw new InvalidException();
             }
+            return new ResponseEntity(voyageService.updateVoyage(voyageDto), HttpStatus.OK);
+        }
+        catch(Exception e){
+            return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        }
+    }
+    @PutMapping("/reduce")
+    public ResponseEntity reducePlace(@RequestBody  String id, BindingResult bindingResult){
+        try {
+            if (bindingResult.hasErrors()) {
+                throw new InvalidException();
+            }
+            VoyageDto voyageDto=voyageService.getVoyageById(id);
+            voyageDto.setNbplace(voyageDto.getNbplace()-1);
             return new ResponseEntity(voyageService.updateVoyage(voyageDto), HttpStatus.OK);
         }
         catch(Exception e){
