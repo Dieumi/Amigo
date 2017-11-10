@@ -17,6 +17,7 @@ public  class UserAdapter {
                 .name(userDTO.getName())
                 .type(userDTO.getType())
                 .lastName(userDTO.getLastName())
+                .credit(userDTO.getCredit())
                 .build();
     }
 
@@ -28,6 +29,7 @@ public  class UserAdapter {
                 .name(userEntity.getName())
                 .type(userEntity.getType())
                 .lastName(userEntity.getLastName())
+                .credit(userEntity.getCredit())
                 .build();
     }
     public static List<UserDTO> listToUserDTO(List<User> list){

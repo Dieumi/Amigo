@@ -39,4 +39,7 @@ public class UserDTO {
     @NotNull
     @NotBlank
     private String type;
+
+    @NotNull
+    private double credit;
 }

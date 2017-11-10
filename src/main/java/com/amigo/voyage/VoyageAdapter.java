@@ -22,7 +22,7 @@ public class VoyageAdapter {
                 .price(voyage.getPrice())
                 .typeVoiture(voyage.getTypeVoiture())
                 .note(voyage.getNote())
-                .date( voyage.getDate())
+                .date(voyage.getDate())
                 .heureDep(voyage.getHeureDep())
                 .build();
     }

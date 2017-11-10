@@ -14,5 +14,6 @@ public interface UserService {
     public UserDTO deleteAccount(String id);
     public UserDTO updateAccount(UserDTO userDTO);
     public UserDTO getUserByLogin(String login);
+    public UserDTO getUserById(String id);
 
 }

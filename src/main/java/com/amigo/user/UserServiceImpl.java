@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO createAccount(UserDTO userDTO) {
-        User user=User.builder().id(userDTO.getId()).email(userDTO.getEmail()).login(userDTO.getLogin()).name(userDTO.getName()).type(userDTO.getType()).lastName(userDTO.getLastName()).build();
+        User user=User.builder().id(userDTO.getId()).email(userDTO.getEmail()).login(userDTO.getLogin()).name(userDTO.getName()).type(userDTO.getType()).lastName(userDTO.getLastName()).credit(userDTO.getCredit()).build();
         userRepository.insert(user);
         return userDTO;
     }
@@ -49,6 +49,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUserByLogin(String login) {
         return UserAdapter.toUserDTO(userRepository.findByLogin(login));
+    }
+
+    @Override
+    public UserDTO getUserById(String id) {
+        return UserAdapter.toUserDTO(userRepository.findById(id));
     }
 
 }

@@ -55,6 +55,12 @@ public class UserController {
     public ResponseEntity updateAccount(@RequestBody @Valid UserDTO userDTO,  BindingResult bindingResult){
         return new ResponseEntity(userService.updateAccount(userDTO),HttpStatus.OK);
     }
+    @PutMapping("/pay")
+    public ResponseEntity updateAccount(@RequestBody String id ,double price,  BindingResult bindingResult){
 
+        UserDTO user=userService.getUserByLogin(id);
+        user.setCredit(user.getCredit()-price);
+        return new ResponseEntity(userService.updateAccount(user),HttpStatus.OK);
+    }
 
 }
