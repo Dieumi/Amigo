@@ -56,11 +56,16 @@ public class UserController {
         return new ResponseEntity(userService.updateAccount(userDTO),HttpStatus.OK);
     }
     @PutMapping("/pay")
-    public ResponseEntity updateAccount(@RequestBody String id ,double price,  BindingResult bindingResult){
+    public ResponseEntity updateAccount(@RequestBody @Valid Res res , BindingResult bindingResult){
 
-        UserDTO user=userService.getUserByLogin(id);
-        user.setCredit(user.getCredit()-price);
-        return new ResponseEntity(userService.updateAccount(user),HttpStatus.OK);
+        UserDTO user=userService.getUserByLogin(res.getIdUser());
+        if(user.getCredit()-res.getPrice()<0){
+            return new ResponseEntity("Pas assez de bif",HttpStatus.OK);
+        }else{
+            user.setCredit(user.getCredit()-res.getPrice());
+            return new ResponseEntity(userService.updateAccount(user),HttpStatus.OK);
+        }
+
     }
 
 }
