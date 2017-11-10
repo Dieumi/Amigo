@@ -58,7 +58,7 @@ public class UserController {
     @PutMapping("/pay")
     public ResponseEntity updateAccount(@RequestBody @Valid Res res , BindingResult bindingResult){
 
-        UserDTO user=userService.getUserByLogin(res.getIdUser());
+        UserDTO user=userService.getUserById(res.getIdUser());
         if(user.getCredit()-res.getPrice()<0){
             return new ResponseEntity("Pas assez de bif",HttpStatus.OK);
         }else{
