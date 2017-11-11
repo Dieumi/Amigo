@@ -1,11 +1,13 @@
 package com.amigo.typeVoyage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class TypeVoyageServiceImpl implements TypeVoyageService {
+	@Autowired
 	TypeVoyageRepository typeRepository;
 	@Override
 	public TypeVoyageDTO createType(TypeVoyageDTO typeDTO) {

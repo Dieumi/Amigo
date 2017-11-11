@@ -51,9 +51,7 @@ public class TypeVoyageController {
             throw new InvalidException();
         }
         try {
-            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{type_id}")
-                    .buildAndExpand(typeService.createType(typeDto)).toUri();
-            return ResponseEntity.created(location).body(typeDto);
+          return new ResponseEntity(typeService.createType(typeDto),HttpStatus.CREATED);
         }
         catch(Exception e){
             return new ResponseEntity(HttpStatus.NOT_MODIFIED);

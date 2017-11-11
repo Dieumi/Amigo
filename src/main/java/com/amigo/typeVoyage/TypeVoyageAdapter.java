@@ -8,6 +8,7 @@ public class TypeVoyageAdapter {
     public static TypeVoyageDTO fromTypeToDto(TypeVoyage typeDTO){
         return TypeVoyageDTO.builder()
                 .id(typeDTO.getId())
+                .idType(typeDTO.getIdType())
                 .idvoyage(typeDTO.getIdvoyage())
                 .build();
     }
@@ -15,6 +16,7 @@ public class TypeVoyageAdapter {
     public static TypeVoyage fromDtoToType(TypeVoyageDTO type){
         return TypeVoyage.builder()
                 .id(type.getId())
+                .idType(type.getIdType())
                 .idvoyage(type.getIdvoyage())
 
                 .build();

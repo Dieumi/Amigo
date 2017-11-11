@@ -13,8 +13,10 @@ import javax.validation.constraints.NotNull;
 public class TypeVoyageDTO {
 
 	private String id;
-	
 
+    @NotNull
+    @NotBlank
+    private String idType;
 	
 	@NotNull
     @NotBlank

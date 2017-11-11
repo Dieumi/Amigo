@@ -18,7 +18,7 @@ public class TypeVoyage {
 
 	@Id
 	private String id;
-	
+	private String idType;
 	private String idvoyage;
 	
 

@@ -23,7 +23,8 @@ public class VoyageServiceImpl implements VoyageService {
     }
     @Override
     public VoyageDto createVoyage(VoyageDto productDto){
-        voyageRepository.save(VoyageAdapter.fromDtoToVoyage(productDto));
+    VoyageEntity v= voyageRepository.save(VoyageAdapter.fromDtoToVoyage(productDto));
+        productDto.setId(v.getId());
         return productDto;
     }
     @Override
