@@ -35,4 +35,8 @@ public class User {
 
     private double credit;
 
+    private double note;
+
+    private int nbvoyage;
+
 }

@@ -21,6 +21,8 @@ public class UserVoyageDto {
     @NotNull
     private String idUser;
 
+    private double note;
+
     public UserVoyageDto(String idUser, int nbplace, String depart, String arrive, String typeVoiture){
        /* this.name = name;
         this.brand = brand;

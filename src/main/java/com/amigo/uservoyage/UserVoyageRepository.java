@@ -16,4 +16,5 @@ public interface UserVoyageRepository extends MongoRepository<UserVoyageEntity, 
     public List<UserVoyageEntity> findByOptionalParameters(String name, String brand, String typeId);
     public List<UserVoyageEntity> findAll();
     public UserVoyageEntity findById(String id);
+    public List<UserVoyageEntity> findAllByIdUserAndNoteEquals(String id,double note);
 }

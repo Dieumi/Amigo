@@ -42,4 +42,10 @@ public class UserVoyageServiceImpl implements UserVoyageService {
         return UserVoyageAdapter.fromVoyagetToDto(productToRetrieve);
     }
 
+    @Override
+    public List<UserVoyageDto> getListUserVoyageByIdUser(String id) {
+        List<UserVoyageEntity> productToRetrieve = userVoyageRepository.findAllByIdUserAndNoteEquals(id,0);
+        return UserVoyageAdapter.fromProductListToDtoList(productToRetrieve);
+    }
+
 }

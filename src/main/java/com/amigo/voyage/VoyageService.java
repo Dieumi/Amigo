@@ -18,4 +18,6 @@ public interface VoyageService {
 
     public VoyageDto getVoyageById(String id);
     public List<VoyageDto> getListVoyage(String arrive,String depart,String heure,String date);
+    public List<VoyageDto> getListVoyageById(String idlist);
+
 }

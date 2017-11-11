@@ -4,6 +4,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -18,5 +20,5 @@ public interface VoyageRepository extends MongoRepository<VoyageEntity, String> 
     public VoyageEntity findById(String id);
     public List<VoyageEntity> findByArriveAndDepartAndDateGreaterThanEqualAndNbplaceGreaterThan(String arr, String dep,String date,int nb);
     public List<VoyageEntity> findByArriveAndDepartAndDateGreaterThanEqualAndHeureDepGreaterThanEqualAndNbplaceGreaterThan(String arr, String dep,String date,String heure,int nb);
-
+    public VoyageEntity findByIdAndDateBefore(String id,String date );
 }

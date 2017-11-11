@@ -12,6 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 /**
  * Created by andrem on 23/03/2017.
@@ -60,10 +61,11 @@ public class UserVoyageController {
             return new ResponseEntity(HttpStatus.NOT_MODIFIED);
         }
     }
+
     @GetMapping("/{Uservoyage_id}")
-    public UserVoyageDto getProductById(@PathVariable("Uservoyage_id") String id){
+    public ResponseEntity getProductById(@PathVariable("Uservoyage_id") String id){
         try {
-            return userVoyageService.getUserVoyageById(id);
+            return new ResponseEntity(userVoyageService.getListUserVoyageByIdUser(id) ,HttpStatus.OK);
         }
         catch(Exception e){
             return null;
@@ -88,6 +90,7 @@ public class UserVoyageController {
             if (bindingResult.hasErrors()) {
                 throw new InvalidException();
             }
+            UserVoyageDto u=userVoyageService.getUserVoyageById(UservoyageDto.getId());
             return new ResponseEntity(userVoyageService.updateUserVoyage(UservoyageDto), HttpStatus.OK);
         }
         catch(Exception e){

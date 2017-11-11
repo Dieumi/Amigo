@@ -42,4 +42,8 @@ public class UserDTO {
 
     @NotNull
     private double credit;
+
+    private double note;
+
+    private int nbvoyage;
 }

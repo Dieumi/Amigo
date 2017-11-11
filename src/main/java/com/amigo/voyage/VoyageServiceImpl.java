@@ -1,9 +1,13 @@
 package com.amigo.voyage;
 
 import com.amigo.auth.AuthDto;
+import com.amigo.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -50,6 +54,26 @@ public class VoyageServiceImpl implements VoyageService {
             return VoyageAdapter.fromProductListToDtoList(voyageRepository.findByArriveAndDepartAndDateGreaterThanEqualAndHeureDepGreaterThanEqualAndNbplaceGreaterThan(arrive,depart,date,heure,0));
         }
         return VoyageAdapter.fromProductListToDtoList(voyageRepository.findByArriveAndDepartAndDateGreaterThanEqualAndNbplaceGreaterThan(arrive,depart,date,0));
+    }
+
+
+
+    @Override
+    public List<VoyageDto> getListVoyageById(String idlist) {
+        List<VoyageDto> list = new ArrayList<VoyageDto>();
+        String[] idlista;
+        idlist=idlist.replace("[\"","");
+        idlist=idlist.replace("\"]","");
+        idlista=idlist.split("\",\"");
+        String today=new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+        for(int i=0;i<idlista.length;i++){
+            VoyageEntity v=voyageRepository.findByIdAndDateBefore(idlista[i],today);
+            if(v!=null){
+                list.add(VoyageAdapter.fromVoyagetToDto(v));
+            }
+
+        }
+        return list;
     }
 
 

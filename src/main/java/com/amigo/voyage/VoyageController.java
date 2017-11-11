@@ -75,6 +75,19 @@ public class VoyageController {
             return new ResponseEntity(HttpStatus.NOT_MODIFIED);
         }
     }
+    @PostMapping("/getListByUser")
+    @ResponseStatus(OK)
+    public ResponseEntity getListVoyage(@RequestBody String idlist, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            throw new InvalidException();
+        }
+        try {
+            return new ResponseEntity(voyageService.getListVoyageById(idlist),HttpStatus.OK);
+        }
+        catch(Exception e){
+            return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        }
+    }
     @GetMapping("/{voyage_id}")
     public VoyageDto getProductById(@PathVariable("voyage_id") String id){
         try {

@@ -15,4 +15,6 @@ public interface UserVoyageService {
     public UserVoyageDto updateUserVoyage(UserVoyageDto productDto);
 
     public UserVoyageDto getUserVoyageById(String id);
+    public List<UserVoyageDto> getListUserVoyageByIdUser(String id);
+
 }

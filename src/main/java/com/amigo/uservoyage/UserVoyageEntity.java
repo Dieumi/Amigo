@@ -19,7 +19,7 @@ public class UserVoyageEntity {
     private String id;
     private String idVoyage;
     private String idUser;
-
+    private double note;
 
 
     @Override
