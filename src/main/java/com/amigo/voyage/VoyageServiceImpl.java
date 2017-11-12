@@ -76,5 +76,12 @@ public class VoyageServiceImpl implements VoyageService {
         return list;
     }
 
+    @Override
+    public List<VoyageDto> getListVoyageByIdUser(String id) {
+        String today=new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+        List<VoyageDto> list=VoyageAdapter.fromProductListToDtoList(voyageRepository.findAllByIdUserAndDateGreaterThan(id,today));
+        return list;
+    }
+
 
 }

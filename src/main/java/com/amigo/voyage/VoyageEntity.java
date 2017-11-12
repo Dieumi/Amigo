@@ -29,7 +29,7 @@ public class VoyageEntity {
 
     private String typeVoiture;
     private double price;
-    private double note;
+    private String note;
     private String date;
     private String heureDep;
     @Override

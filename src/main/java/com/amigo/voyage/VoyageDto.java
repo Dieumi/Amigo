@@ -33,7 +33,7 @@ public class VoyageDto {
     @NotNull
     private String date;
     @NotNull
-    private double note;
+    private String note;
     @NotNull
     private String heureDep;
     public VoyageDto(String idUser, int nbplace, String depart, String arrive, String typeVoiture){
