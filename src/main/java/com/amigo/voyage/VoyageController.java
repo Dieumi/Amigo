@@ -77,7 +77,7 @@ public class VoyageController {
     }
     @PostMapping("/getListById")
     @ResponseStatus(OK)
-    public ResponseEntity getListVoyageById(@RequestBody   String id, BindingResult bindingResult){
+    public ResponseEntity getListVoyageId(@RequestBody   String id, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             throw new InvalidException();
         }
@@ -111,12 +111,9 @@ public class VoyageController {
             return null;
         }
     }
-    @DeleteMapping()
-    public ResponseEntity deleteProduct(@RequestBody String id, BindingResult bindingResult){
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity deleteProduct(@PathVariable("id") String id){
         try {
-            if (bindingResult.hasErrors()) {
-                throw new InvalidException();
-            }
             return new ResponseEntity(voyageService.deleteVoyage(id), HttpStatus.OK);
         }
         catch(Exception e){

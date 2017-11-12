@@ -1,9 +1,9 @@
-package com.pachimari.user;
+package com.amigo.user;
 
 import com.jayway.restassured.RestAssured;
-import com.pachimari.MongoConfigTest;
-import com.pachimari.PachimariApplication;
-import com.pachimari.user.repository.UserRepository;
+import com.amigo.MongoConfigTest;
+import com.amigo.PachimariApplication;
+import com.amigo.user.repository.UserRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,12 +32,13 @@ public class UserControllerIT {
     private MongoTemplate mongoTemplate;
     @Autowired
     UserRepository repository;
+
     @Before
     public void init(){
 
         mongoTemplate.dropCollection(User.class);
-        mongoTemplate.save(User.builder().id("0").email("test@test.fr").name("test").lastName("lasttest").login("test1").addresse("36 rue houdart").ville("roissy").cp("95700").type("admin").build());
-        mongoTemplate.save(User.builder().id("1").email("test2@test.fr").name("test2").login("test2").addresse("36 rue houdart").ville("roissy").cp("95700").type("user").build());
+        mongoTemplate.save(User.builder().id("0").email("test@test.fr").name("test").lastName("lasttest").login("test1").credit(100).note(0.0).nbvoyage(0).type("user").build());
+        mongoTemplate.save(User.builder().id("1").email("test2@test.fr").name("test2").login("test2").credit(100).note(0.0).nbvoyage(0).type("user").build());
         RestAssured.port=localServerPort;
 
     }
@@ -49,7 +50,7 @@ public class UserControllerIT {
     @Test
     public void should_update_user(){
 
-        UserDTO userDTO= UserDTO.builder().id("0").email("test@test.fr").name("test3").login("test2").build();
+        UserDTO userDTO= UserDTO.builder().id("0").email("test@test.fr").name("test3").login("test2").credit(100).note(0.0).nbvoyage(0).build();
 
         given().log().all().contentType(JSON).body(userDTO).when()
                 .put("/user")
@@ -64,7 +65,7 @@ public class UserControllerIT {
     @Test
     public void should_create_user(){
 
-        UserDTO userDTO=UserDTO.builder().id("2").name("fifth").lastName("fifthlast").login("test").email("test@email.fr").type("admin").addresse("36 rue houdart").ville("roissy").cp("95700").build();
+        UserDTO userDTO=UserDTO.builder().id("2").name("fifth").lastName("fifthlast").login("test").email("test@email.fr").type("admin").credit(100).note(0.0).nbvoyage(0).build();
 
         given().log().all().contentType(JSON).body(userDTO).when()
                 .post("/user")

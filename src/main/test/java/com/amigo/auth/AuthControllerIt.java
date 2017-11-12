@@ -1,8 +1,8 @@
-package com.pachimari.auth;
+package com.amigo.auth;
 
 import com.jayway.restassured.RestAssured;
-import com.pachimari.MongoConfigTest;
-import com.pachimari.PachimariApplication;
+import com.amigo.MongoConfigTest;
+import com.amigo.PachimariApplication;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

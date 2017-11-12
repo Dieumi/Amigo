@@ -1,4 +1,4 @@
-package com.pachimari;
+package com.amigo;
 
 
 import com.mongodb.Mongo;

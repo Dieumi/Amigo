@@ -1,9 +1,8 @@
-package com.pachimari.auth;
+package com.amigo.auth;
 
 import com.jayway.restassured.RestAssured;
-import com.pachimari.MongoConfigTest;
-import com.pachimari.PachimariApplication;
-import com.pachimari.user.User;
+import com.amigo.MongoConfigTest;
+import com.amigo.PachimariApplication;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;

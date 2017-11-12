@@ -1,9 +1,9 @@
-package com.pachimari.user;
+package com.amigo.user;
 
+import com.amigo.MongoConfigTest;
 import com.jayway.restassured.RestAssured;
-import com.pachimari.MongoConfigTest;
-import com.pachimari.PachimariApplication;
-import com.pachimari.user.repository.UserRepository;
+import com.amigo.PachimariApplication;
+import com.amigo.user.repository.UserRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,8 +34,8 @@ public class UserRepositoryTest {
     @Before
     public void init(){
         mongoTemplate.dropCollection(User.class);
-        mongoTemplate.save(User.builder().id("1").email("test@test.fr").name("test").login("test1").addresse("36 rue houdart").ville("roissy").cp("95700").build());
-        mongoTemplate.save(User.builder().id("2").email("test2@test.fr").name("test2").login("test3").addresse("36 rue cdg").ville("roissy").cp("95700").build());
+        mongoTemplate.save(User.builder().id("1").email("test@test.fr").name("test").login("test1").credit(100).note(0.0).nbvoyage(0).build());
+        mongoTemplate.save(User.builder().id("2").email("test2@test.fr").name("test2").login("test3").credit(100).note(0.0).nbvoyage(0).build());
         RestAssured.port=localServerPort;
     }
     @After
